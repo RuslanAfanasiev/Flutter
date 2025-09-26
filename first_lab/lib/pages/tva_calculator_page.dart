@@ -9,13 +9,14 @@ class TvaCalculatorPage extends StatefulWidget {
 
 class _TvaCalculatorPageState extends State<TvaCalculatorPage> {
   final TextEditingController _priceController = TextEditingController();
-  double _selectedTVA = 0.05;
+  final TextEditingController _tvaController = TextEditingController(text: "5");
   double? _finalPrice;
 
   void _calculatePrice() {
     setState(() {
       double priceWithoutTVA = double.tryParse(_priceController.text) ?? 0;
-      _finalPrice = priceWithoutTVA * (1 + _selectedTVA);
+      double tvaPercent = double.tryParse(_tvaController.text) ?? 0;
+      _finalPrice = priceWithoutTVA * (1 + tvaPercent / 100);
     });
   }
 
@@ -35,19 +36,11 @@ class _TvaCalculatorPageState extends State<TvaCalculatorPage> {
               decoration: const InputDecoration(hintText: "Ex: 100"),
             ),
             const SizedBox(height: 20),
-            const Text("Selectați procentul TVA:"),
-            DropdownButton<double>(
-              value: _selectedTVA,
-              items: const [
-                DropdownMenuItem(value: 0.05, child: Text("5%")),
-                DropdownMenuItem(value: 0.08, child: Text("8%")),
-                DropdownMenuItem(value: 0.20, child: Text("20%")),
-              ],
-              onChanged: (value) {
-                setState(() {
-                  _selectedTVA = value!;
-                });
-              },
+            const Text("Introduceți procentul TVA:"),
+            TextField(
+              controller: _tvaController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(hintText: "Ex: 5"),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -56,11 +49,9 @@ class _TvaCalculatorPageState extends State<TvaCalculatorPage> {
             ),
             const SizedBox(height: 20),
             if (_finalPrice != null)
-              Text("Preț final cu TVA: ${_finalPrice!.toStringAsFixed(2)}",
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+              Text(
+                "Preț final cu TVA: ${_finalPrice!.toStringAsFixed(2)}",
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
           ],
         ),
