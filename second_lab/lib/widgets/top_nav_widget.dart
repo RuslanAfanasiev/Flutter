@@ -14,8 +14,7 @@ class TopNavbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 44, left: 21, right: 21, bottom: 16),
-
+      padding: const EdgeInsets.only(top: 22, left: 13, right: 21, bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
