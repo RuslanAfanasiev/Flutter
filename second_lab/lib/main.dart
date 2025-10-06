@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:second_lab/pages/header.dart';
+import 'package:second_lab/pages/main_page.dart';
+import 'package:second_lab/widgets/top_nav_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,25 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10, left: 10),
-              child: HeaderWidget(text: 'Welcome Sidra'),
-            ),
-            SvgPicture.asset(
-              'assets/icons/Vector.svg',
-              colorFilter: const ColorFilter.mode(Color(0xFF00707E), BlendMode.srcIn), // Schimbă culoarea la #00707E
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 1.67, left: 1.67),
-              child: NotificationIcon(imagePath: 'assets/icons/notification-2-fill.png'),
-            ),
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+      home: const MyHomePage(title: "Flutter demo home page"),
     );
   }
 }
