@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:second_lab/resources/app_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:second_lab/resources/app_icons.dart';
 
 import '../list_items/nav_list_item.dart';
@@ -20,7 +19,8 @@ class TopNavbarWidget extends StatelessWidget {
         children: [
           RichText(
             text: TextSpan(
-              style: GoogleFonts.plusJakartaSans(
+              style: const TextStyle(
+                fontFamily: 'Plus Jakarta Sans',
                 fontWeight: FontWeight.w700,
                 fontSize: 20,
                 height: 1.2,

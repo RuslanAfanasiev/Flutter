@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:second_lab/pages/main_page.dart';
-import 'package:second_lab/widgets/top_nav_widget.dart';
 
 void main() {
   runApp(const MyApp());
