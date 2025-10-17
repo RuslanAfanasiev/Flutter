@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:second_lab/list_items/categories_item.dart';
-import 'package:second_lab/list_items/course_card_item.dart';
-import 'package:second_lab/list_items/horizontal/top_courses_horizontal_list_item.dart';
-import 'package:second_lab/list_items/search_bar_list_item.dart';
-import 'package:second_lab/list_items/suggestions_item.dart';
-import 'package:second_lab/list_items/top_courses_item.dart';
+import 'package:second_lab/home_page_items/list_items/categories_item.dart';
+import 'package:second_lab/home_page_items/list_items/continue_watching_item.dart';
+import 'package:second_lab/home_page_items/list_items/course_card_item.dart';
+import 'package:second_lab/home_page_items/list_items/horizontal/suggestions_horizontal_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/horizontal/toggle_button_horizontal_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/horizontal/top_courses_horizontal_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/nav_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/search_bar_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/suggestions_item.dart';
+import 'package:second_lab/home_page_items/list_items/top_courses_item.dart';
 import 'package:second_lab/pages/MainController.dart';
-import 'package:second_lab/widgets/categories_widget.dart';
-import 'package:second_lab/widgets/continue_watching_widget.dart';
-import 'package:second_lab/widgets/course_card_widget.dart';
-import 'package:second_lab/widgets/horizontal/toggle_button_horizontal_list_widget.dart';
-import 'package:second_lab/widgets/horizontal/top_courses_horizontal_list_widget.dart';
-import 'package:second_lab/widgets/search_bar_widget.dart';
-import 'package:second_lab/widgets/top_courses_widget.dart';
-import 'package:second_lab/widgets/top_nav_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/categories_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/continue_watching_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/course_card_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/horizontal/suggestions_horizontal_list_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/horizontal/toggle_button_horizontal_list_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/horizontal/top_courses_horizontal_list_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/search_bar_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/suggestions_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/top_courses_widget.dart';
+import 'package:second_lab/widgets/home_page_widget/top_nav_widget.dart';
 
-import '../list_items/continue_watching_item.dart';
-import '../list_items/horizontal/suggestions_horizontal_list_item.dart';
-import '../list_items/horizontal/toggle_button_horizontal_list_item.dart';
-import '../list_items/nav_list_item.dart';
-import '../widgets/horizontal/suggestions_horizontal_list_widget.dart';
-import '../widgets/suggestions_widget.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

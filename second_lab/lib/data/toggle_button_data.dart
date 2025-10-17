@@ -1,4 +1,4 @@
-import 'package:second_lab/list_items/toggle_button_item.dart';
+import '../home_page_items/list_items/toggle_button_item.dart';
 
 final List<ToggleButtonItem> toggleButton = [
   ToggleButtonItem(title: 'Graphic Design'),

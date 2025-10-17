@@ -7,4 +7,6 @@ class AppImages {
   static String image6 = 'resources/images/image 6.png';
   static String image7 = 'resources/images/image 7.png';
   static String image8 = 'resources/images/image 8.png';
+  static String typographyImage = 'resources/images/typography_image.png';
+  static String rectangle18 = 'resources/images/Rectangle 18.png';
 }

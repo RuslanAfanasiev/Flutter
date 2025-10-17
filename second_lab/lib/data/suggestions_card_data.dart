@@ -1,5 +1,4 @@
-import 'package:second_lab/list_items/suggestions_card_item.dart';
-
+import '../home_page_items/list_items/suggestions_card_item.dart';
 import '../resources/app_images.dart';
 
 final List<SuggestionsCardItem> suggestionsCardData = [

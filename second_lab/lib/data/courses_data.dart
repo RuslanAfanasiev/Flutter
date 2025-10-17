@@ -1,4 +1,4 @@
-import '../list_items/course_card_item.dart';
+import '../home_page_items/list_items/course_card_item.dart';
 import '../resources/app_images.dart';
 
 final List<CourseCardItem> coursesProgress = [

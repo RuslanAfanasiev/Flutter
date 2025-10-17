@@ -1,16 +1,17 @@
 import 'package:get/get.dart';
 import 'package:second_lab/data/courses_data.dart';
-import 'package:second_lab/list_items/categories_item.dart';
-import 'package:second_lab/list_items/continue_watching_item.dart';
-import 'package:second_lab/list_items/horizontal/suggestions_horizontal_list_item.dart';
-import 'package:second_lab/list_items/horizontal/toggle_button_horizontal_list_item.dart';
-import 'package:second_lab/list_items/list_item.dart';
-import 'package:second_lab/list_items/nav_list_item.dart';
-import 'package:second_lab/list_items/search_bar_list_item.dart';
-import 'package:second_lab/list_items/suggestions_item.dart';
-import 'package:second_lab/list_items/top_courses_item.dart';
+import 'package:second_lab/home_page_items/list_items/categories_item.dart';
+import 'package:second_lab/home_page_items/list_items/continue_watching_item.dart';
+import 'package:second_lab/home_page_items/list_items/horizontal/suggestions_horizontal_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/horizontal/toggle_button_horizontal_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/horizontal/top_courses_horizontal_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/list_item.dart';
+import 'package:second_lab/home_page_items/list_items/nav_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/search_bar_list_item.dart';
+import 'package:second_lab/home_page_items/list_items/suggestions_item.dart';
+import 'package:second_lab/home_page_items/list_items/top_courses_item.dart';
 
-import '../list_items/horizontal/top_courses_horizontal_list_item.dart';
+
 import '../resources/strings.dart';
 
 class MainController extends GetxController{
