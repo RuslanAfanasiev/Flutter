@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:second_lab/home_page_items/list_items/top_courses_card_item.dart';
+import 'package:second_lab/resources/app_colors.dart';
 import 'package:second_lab/resources/app_icons.dart';
 
-class TopCoursesCardWidget extends StatelessWidget{
+class TopCoursesCardWidget extends StatefulWidget {
   const TopCoursesCardWidget({super.key, required this.item});
 
   final TopCoursesCardItem item;
 
   @override
-  Widget build(BuildContext context){
+  State<TopCoursesCardWidget> createState() => _TopCoursesCardWidgetState();
+}
+
+class _TopCoursesCardWidgetState extends State<TopCoursesCardWidget> {
+  bool isBookmarked = false;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: 180,
       margin: const EdgeInsets.only(right: 1, left: 15),
@@ -30,32 +38,32 @@ class TopCoursesCardWidget extends StatelessWidget{
           Stack(
             children: [
               ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(8),
-                  topRight: Radius.circular(8),
-                  bottomLeft: Radius.circular(8),
-                  bottomRight: Radius.circular(8),
-                ),
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: Image.asset(
-                  item.image,
+                  widget.item.image,
                   width: double.infinity,
                   height: 120,
                   fit: BoxFit.cover,
                 ),
               ),
               Positioned(
-                top: 8,
-                right: 8,
-                child: Container(
-                  padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.8),
-                    shape: BoxShape.circle,
-                  ),
-                  child: SizedBox(
-                    width: 18,
-                    height: 18,
-                    child: AppIcons.bookMark,
+                top: 2,
+                right: 2,
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isBookmarked = !isBookmarked;
+                    });
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    child: SizedBox(
+                      width: 25,
+                      height: 25,
+                      child: isBookmarked
+                          ? AppIcons.bookMarkActive
+                          : AppIcons.bookMarkEmpty,
+                    ),
                   ),
                 ),
               ),
@@ -67,28 +75,31 @@ class TopCoursesCardWidget extends StatelessWidget{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  item.title,
-                  style: const TextStyle(
+                  widget.item.title,
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
-                    color: Colors.black87,
+                    color: AppColors.color00434C,
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  item.subtitle,
-                  style: const TextStyle(fontSize: 12.5, color: Colors.grey),
+                  widget.item.subtitle,
+                  style: TextStyle(
+                    fontSize: 12.5,
+                    color: AppColors.color6C6C6C,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Icon(Icons.star, color: Colors.teal, size: 16),
+                    SizedBox(width: 15, height: 15, child: AppIcons.starIcon),
                     const SizedBox(width: 4),
                     Text(
-                      item.rating.toString(),
-                      style: const TextStyle(
+                      widget.item.rating.toString(),
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        color: Colors.teal,
+                        color: AppColors.color00434C,
                       ),
                     ),
                   ],

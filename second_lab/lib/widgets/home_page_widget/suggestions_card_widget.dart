@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:second_lab/home_page_items/list_items/suggestions_card_item.dart';
+import 'package:second_lab/resources/app_colors.dart';
 import 'package:second_lab/resources/app_icons.dart';
 import 'package:second_lab/widgets/typography_page_widget/typography_course_widget.dart';
 
-class SuggestionsCardWidget extends StatelessWidget {
+class SuggestionsCardWidget extends StatefulWidget {
   const SuggestionsCardWidget({super.key, required this.item});
 
   final SuggestionsCardItem item;
 
   @override
+  State<SuggestionsCardWidget> createState() => _SuggestionsCardWidgetState();
+}
+
+class _SuggestionsCardWidgetState extends State<SuggestionsCardWidget> {
+  bool isBookmarked = false;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (item.title == 'Typography and Layout Design') {
+        if (widget.item.title == 'Typography and Layout Design') {
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -49,25 +57,30 @@ class SuggestionsCardWidget extends StatelessWidget {
                     bottomRight: Radius.circular(8),
                   ),
                   child: Image.asset(
-                    item.image,
+                    widget.item.image,
                     width: double.infinity,
                     height: 120,
                     fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(
-                  top: 8,
-                  right: 8,
-                  child: Container(
-                    padding: const EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
-                      shape: BoxShape.circle,
-                    ),
-                    child: SizedBox(
-                      width: 18,
-                      height: 18,
-                      child: AppIcons.bookMark,
+                  top: 2,
+                  right: 2,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isBookmarked = !isBookmarked;
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(1),
+                      child: SizedBox(
+                        width: 25,
+                        height: 25,
+                        child: isBookmarked
+                            ? AppIcons.bookMarkActive
+                            : AppIcons.bookMarkEmpty,
+                      ),
                     ),
                   ),
                 ),
@@ -79,28 +92,31 @@ class SuggestionsCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    item.title,
-                    style: const TextStyle(
+                    widget.item.title,
+                    style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: Colors.black87,
+                      color: AppColors.color00434C,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    item.subtitle,
-                    style: const TextStyle(fontSize: 12.5, color: Colors.grey),
+                    widget.item.subtitle,
+                    style: TextStyle(
+                      fontSize: 12.5,
+                      color: AppColors.color6C6C6C,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Icon(Icons.star, color: Colors.teal, size: 16),
+                      SizedBox(width: 15, height: 15, child: AppIcons.starIcon),
                       const SizedBox(width: 4),
                       Text(
-                        item.rating.toString(),
-                        style: const TextStyle(
+                        widget.item.rating.toString(),
+                        style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          color: Colors.teal,
+                          color: AppColors.color00434C,
                         ),
                       ),
                     ],

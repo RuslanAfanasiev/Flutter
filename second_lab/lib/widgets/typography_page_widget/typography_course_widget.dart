@@ -35,7 +35,7 @@ class TypographyCoursePage extends StatelessWidget {
                           Container(
                             width: double.infinity,
                             height: 195,
-                            color: AppColors.color00707E.withOpacity(0.3),
+                            color: AppColors.color00707E.withOpacity(0.6),
                           ),
                         ],
                       ),
@@ -43,7 +43,6 @@ class TypographyCoursePage extends StatelessWidget {
                   ),
                 ),
 
-                // Butonul Back (arrow) și Bookmark
                 Padding(
                   padding: const EdgeInsets.only(left: 12, top: 25, right: 12),
                   child: Row(
@@ -67,7 +66,6 @@ class TypographyCoursePage extends StatelessWidget {
                   ),
                 ),
 
-                // Butonul Play în mijloc cu border alb
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.center,
@@ -85,7 +83,6 @@ class TypographyCoursePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Titlu și subtitlu
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
@@ -134,7 +131,6 @@ class TypographyCoursePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  // 📚 Course Details cu Read More la sfârșitul textului
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -185,7 +181,6 @@ class TypographyCoursePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  // 📋 Info (Lectures, Learning time, Certificate)
                   Container(
                     padding: const EdgeInsets.all(16),
                     child: Column(

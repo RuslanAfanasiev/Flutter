@@ -10,8 +10,8 @@ class ToggleButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      margin: const EdgeInsets.only(right: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
+      margin: const EdgeInsets.only(right: 0.1),
       decoration: BoxDecoration(
         color: AppColors.colorFFFFFF,
         border: Border.all(color: AppColors.color00707E, width: 1.2),
