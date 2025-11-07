@@ -73,19 +73,19 @@ class _MyHomePageState extends State<MyHomePage> {
               return CategoriesWidget(item: item);
             }
             if(item is ToggleButtonHorizontalListItem){
-              return ToggleButtonHorizontalListWidget();
+              return ToggleButtonHorizontalListWidget(item: item.item);
             }
             if(item is SuggestionsItem){
               return SuggestionsWidget(item: item);
             }
             if (item is SuggestionsHorizontalListItem) {
-              return SuggestionsHorizontalListWidget();
+              return SuggestionsHorizontalListWidget(item: item.item);
             }
             if(item is TopCoursesItem){
               return TopCoursesWidget(item: item);
             }
             if(item is TopCoursesHorizontalListItem){
-              return TopCoursesHorizontalListWidget();
+              return TopCoursesHorizontalListWidget(item: item.item);
             }
           },
         ),

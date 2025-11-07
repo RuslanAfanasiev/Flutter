@@ -1,8 +1,16 @@
 import 'package:second_lab/home_page_items/list_items/list_item.dart';
 
+//TODO: json serializable
 class NavbarListItem extends ListItem {
-  final String welcome;
-  final String username;
+  final String name;
+  final int notifications;
 
-  NavbarListItem({required this.welcome, required this.username});
+  NavbarListItem({required this.name, required this.notifications});
+
+  factory NavbarListItem.fromJson(Map<String, dynamic> json) {
+    return NavbarListItem(
+      name: json['name'] as String,
+      notifications: json['notifications'] as int,
+    );
+  }
 }

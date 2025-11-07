@@ -39,7 +39,7 @@ class _TopCoursesCardWidgetState extends State<TopCoursesCardWidget> {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(8)),
-                child: Image.asset(
+                child: Image.network(
                   widget.item.image,
                   width: double.infinity,
                   height: 120,
@@ -84,7 +84,7 @@ class _TopCoursesCardWidgetState extends State<TopCoursesCardWidget> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  widget.item.subtitle,
+                  widget.item.institute,
                   style: TextStyle(
                     fontSize: 12.5,
                     color: AppColors.color6C6C6C,

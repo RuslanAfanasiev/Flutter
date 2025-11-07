@@ -32,13 +32,42 @@ class TopNavbarWidget extends StatelessWidget {
                   style: const TextStyle(color: Colors.black),
                 ),
                 TextSpan(
-                  text: Strings.username,
+                  text: item.name,
                   style: TextStyle(color: AppColors.color00434C),
                 ),
               ],
             ),
           ),
-          AppIcons.notificationIcon,
+          Stack(
+            children: [
+              AppIcons.notificationIcon,
+              if (item.notifications > 0)
+                Positioned(
+                  right: 0,
+                  bottom: 8,
+                  child: Container(
+                    padding: const EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    constraints: const BoxConstraints(
+                      minWidth: 5,
+                      minHeight: 5,
+                    ),
+                    child: Text(
+                      '${item.notifications}',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 7,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ],
       ),
     );

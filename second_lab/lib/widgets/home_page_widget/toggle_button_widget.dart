@@ -19,7 +19,7 @@ class ToggleButtonWidget extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          item.title,
+          item.name,
           style: TextStyle(
             fontFamily: 'Plus Jakarta Sans',
             fontSize: 14,
