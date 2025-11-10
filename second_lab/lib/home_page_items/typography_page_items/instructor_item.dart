@@ -1,4 +1,4 @@
-import '../../widgets/typography_page_widget/typography_list_item.dart';
+import 'typography_list_item.dart';
 
 class InstructorItem extends TypographyListItem {
   final String name;
@@ -21,4 +21,5 @@ class InstructorItem extends TypographyListItem {
       image: json['image'],
     );
   }
+
 }

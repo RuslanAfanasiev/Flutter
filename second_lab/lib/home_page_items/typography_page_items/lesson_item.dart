@@ -1,4 +1,4 @@
-import '../../widgets/typography_page_widget/typography_list_item.dart';
+import 'typography_list_item.dart';
 
 class LessonItem extends TypographyListItem {
   final String id;

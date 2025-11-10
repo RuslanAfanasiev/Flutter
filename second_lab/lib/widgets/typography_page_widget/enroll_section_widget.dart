@@ -1,46 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:second_lab/resources/app_colors.dart';
 
+import '../../home_page_items/typography_page_items/course_item.dart';
+
 class EnrollSectionWidget extends StatelessWidget {
-  const EnrollSectionWidget({super.key});
+  final CourseItem item;
+  const EnrollSectionWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+    return Container(
+      padding: const EdgeInsets.all(16),
+      //color: AppColors.color00434C,
       child: Column(
         children: [
+          const SizedBox(height: 12),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              // Logică de înscriere
+            },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.color00707E,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              minimumSize: const Size(double.infinity, 55),
+              minimumSize: Size(double.infinity, 50),
             ),
-            child: const Text(
-              'ENROLL NOW',
-              style: TextStyle(
-                fontFamily: 'Plus Jakarta Sans',
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Start your 7-day free Trial',
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: 'Plus Jakarta Sans',
-                color: AppColors.color6C6C6C,
-                decoration: TextDecoration.underline,
-              ),
-            ),
+            child: Text('Enroll Now', style: TextStyle(fontSize: 16, color: Colors.white)),
           ),
         ],
       ),

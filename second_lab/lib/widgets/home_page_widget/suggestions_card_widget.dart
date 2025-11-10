@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:second_lab/home_page_items/list_items/suggestions_card_item.dart';
+import 'package:second_lab/pages/typography_page.dart';
 import 'package:second_lab/resources/app_colors.dart';
 import 'package:second_lab/resources/app_icons.dart';
-import 'package:second_lab/widgets/typography_page_widget/typography_course_widget.dart';
 
 class SuggestionsCardWidget extends StatefulWidget {
   const SuggestionsCardWidget({super.key, required this.item});

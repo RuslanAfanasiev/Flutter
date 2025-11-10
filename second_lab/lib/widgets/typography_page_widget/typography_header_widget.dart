@@ -1,66 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:second_lab/resources/app_colors.dart';
-import 'package:second_lab/resources/app_icons.dart';
-import 'package:second_lab/resources/app_images.dart';
+
+import '../../home_page_items/typography_page_items/course_item.dart';
 
 class TypographyHeaderWidget extends StatelessWidget {
-  const TypographyHeaderWidget({super.key});
+  final CourseItem item;
+  const TypographyHeaderWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SafeArea(
-          bottom: false,
-          child: Stack(
+        Image.network(
+          item.thumbnail,
+          height: 240,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Container(
+          height: 240,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 16,
+          left: 16,
+          right: 16,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                child: Image.asset(
-                  AppImages.typographyImage,
-                  width: double.infinity,
-                  height: 195,
-                  fit: BoxFit.cover,
+              Text(
+                item.title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 195,
-                color: AppColors.color00707E.withOpacity(0.6),
+              Text(
+                item.institute,
+                style: const TextStyle(color: Colors.white70, fontSize: 16),
               ),
             ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 12, top: 25, right: 12),
-          child: Row(
-            children: [
-              IconButton(
-                icon: AppIcons.arrow,
-                iconSize: 28,
-                color: AppColors.colorD9EFF2,
-                onPressed: () => Navigator.pop(context),
-              ),
-              const Spacer(),
-              IconButton(
-                icon: AppIcons.bookMarkActive,
-                iconSize: 28,
-                color: AppColors.colorD9EFF2,
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-        Positioned.fill(
-          child: Align(
-            alignment: Alignment.center,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-              ),
-              padding: const EdgeInsets.all(12),
-              child: AppIcons.playIcon,
-            ),
           ),
         ),
       ],

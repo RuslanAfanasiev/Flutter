@@ -1,6 +1,6 @@
 import 'package:second_lab/home_page_items/typography_page_items/related_course_item.dart';
 
-import '../../widgets/typography_page_widget/typography_list_item.dart';
+import 'typography_list_item.dart';
 import 'instructor_item.dart';
 import 'lesson_item.dart';
 
