@@ -14,9 +14,15 @@ class CourseInfoSectionWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(item.title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+          Text(
+            item.title,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+          ),
           const SizedBox(height: 6),
-          Text(item.institute, style: const TextStyle(fontSize: 16, color: Colors.blueGrey)),
+          Text(
+            item.institute,
+            style: const TextStyle(fontSize: 16, color: Colors.blueGrey),
+          ),
           const SizedBox(height: 10),
           Row(
             children: [
@@ -24,8 +30,13 @@ class CourseInfoSectionWidget extends StatelessWidget {
               const SizedBox(width: 4),
               Text('${item.enrolledStudents} students already enrolled'),
               const Spacer(),
-              Text('${item.price} ${item.currency}',
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+              Text(
+                '${item.price} ${item.currency}',
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           ),
         ],
